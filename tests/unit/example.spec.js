@@ -10,4 +10,11 @@ describe("HelloWorld.vue", () => {
     });
     expect(wrapper.text()).to.include(msg);
   });
+  it("renders value when passed", () => {
+    const value = 1;
+    const wrapper = shallowMount(HelloWorld, {
+      propsData: { value }
+    });
+    expect(wrapper.text()).to.include(value);
+  });
 });
